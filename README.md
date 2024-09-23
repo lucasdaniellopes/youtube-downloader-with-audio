@@ -1,87 +1,77 @@
-# Script for Downloading and Combining YouTube Video and Audio
+# Downloader de Vídeo e Áudio com Interface Gráfica
 
-This script uses the `yt-dlp` library to download videos and audio from YouTube, and then combines the video and audio using `ffmpeg`. The result is a video file with integrated audio.
+Este script Python oferece uma interface gráfica do usuário (GUI) para baixar vídeos, extrair áudio e mesclar ambos em um único arquivo MP4.
 
-## Requirements
+## Funcionalidades
 
-Before running the script, ensure you have the following software installed:
+- **Baixar Vídeos:** Baixa vídeos do YouTube e de outras plataformas compatíveis com yt-dlp.
+- **Extrair Áudio:** Extrai o áudio do vídeo baixado.
+- **Mesclar Vídeo e Áudio:** Combina o vídeo e o áudio extraído em um único arquivo MP4.
+- **Interface Gráfica Amigável:** Permite que os usuários insiram facilmente a URL do vídeo, escolham o nome do arquivo de saída e acompanhem o progresso do download e da mesclagem.
+- **Opção de Remover Arquivos Separados:** Permite a exclusão dos arquivos de áudio e vídeo individuais após a mesclagem, mantendo apenas o arquivo MP4 final.
 
-- [Python](https://www.python.org/downloads/) (version 3.6 or higher)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (a tool for downloading videos from YouTube)
-- [ffmpeg](https://ffmpeg.org/download.html) (a tool for audio and video processing)
+## Pré-requisitos
 
-## Installation
-
-1. **Install `yt-dlp`**:
-
-   ```bash
-   pip install yt-dlp
-   ```
-
-2. **Install `ffmpeg`**:
-
-   - Follow the instructions for your operating system on the [FFmpeg download page](https://ffmpeg.org/download.html).
-
-## Usage
-
-1. **Edit the Script**:
-
-   - Replace the value of `url` with the URL of the YouTube video you want to download.
-   - Adjust the `path` variable to specify the directory where you want to save the files.
-
-2. **Run the Script**:
-
-   Save the script in a file named `download_and_combine.py` and run it with:
-
-   ```bash
-   python download_and_combine.py
-   ```
-
-3. **Check the Result**:
-
-   After running the script, you will find the combined file `video_with_audio.mp4` in the specified directory. The script also saves the video and audio separately before combining them.
-
-PT-BR
-
-# Script para Baixar e Combinar Vídeo e Áudio do YouTube
-
-Este script utiliza a biblioteca `yt-dlp` para baixar vídeos e áudios do YouTube e, em seguida, combina o vídeo e o áudio usando `ffmpeg`. O resultado é um arquivo de vídeo com áudio integrado.
-
-## Requisitos
-
-Antes de executar o script, certifique-se de ter os seguintes softwares instalados:
-
-- [Python](https://www.python.org/downloads/) (versão 3.6 ou superior)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (uma ferramenta para baixar vídeos do YouTube)
-- [ffmpeg](https://ffmpeg.org/download.html) (uma ferramenta para manipulação de áudio e vídeo)
-
-## Instalação
-
-1. **Instale `yt-dlp`**:
-
-   ```bash
-   pip install yt-dlp
-   ```
-
-2. **Instale `ffmpeg`**:
-
-   - Siga as instruções específicas para seu sistema operacional na [página de download do FFmpeg](https://ffmpeg.org/download.html).
+- **Python 3:** Certifique-se de ter o Python 3 instalado em seu sistema.
+- **Bibliotecas:** Instale as bibliotecas necessárias:
+  ```bash
+  pip install yt-dlp tkinter ffmpeg-python
+  ```
+- **ffmpeg:** Baixe e instale o ffmpeg em [https://ffmpeg.org/](https://ffmpeg.org/) e certifique-se de que ele esteja adicionado à variável de ambiente PATH do seu sistema. Isso permitirá que o script execute o ffmpeg a partir da linha de comando.
 
 ## Como Usar
 
-1. **Edite o Script**:
+1. **Executar o Script:** Execute o script Python. Uma janela da interface gráfica será aberta.
+2. **Inserir URL:** Cole a URL do vídeo desejado no campo "URL do Vídeo".
+3. **Nome do Arquivo de Saída (Opcional):** Insira um nome para o arquivo de saída no campo "Nome do Arquivo Final". Se este campo for deixado em branco, o nome padrão "video_with_audio.mp4" será usado.
+4. **Manter Arquivos Separados (Opcional):** Marque a caixa de seleção "Manter arquivos de vídeo e áudio separados" se desejar manter os arquivos de vídeo e áudio baixados separadamente, além do arquivo MP4 mesclado.
+5. **Baixar e Mesclar:** Clique no botão "Baixar e Combinar".
+6. **Selecionar Pasta de Destino:** Uma janela de diálogo será aberta para que você escolha a pasta onde deseja salvar o vídeo e o áudio.
+7. **Aguardar o Download e a Mesclagem:** O progresso do download e da mesclagem será exibido na área de texto na parte inferior da janela.
+8. **Pronto!** Uma mensagem será exibida quando o processo for concluído, informando o local onde o vídeo mesclado foi salvo.
 
-   - Substitua o valor de `url` com o URL do vídeo do YouTube que você deseja baixar.
-   - Ajuste o caminho `path` para o diretório onde você deseja salvar os arquivos.
+## Observações
 
-2. **Execute o Script**:
+- O script usa o yt-dlp para baixar vídeos e o ffmpeg para mesclar o vídeo e o áudio.
+- Certifique-se de que o ffmpeg esteja instalado corretamente e adicionado à variável de ambiente PATH do seu sistema.
+- O tempo de download e mesclagem pode variar dependendo do tamanho do vídeo e da velocidade da sua internet.
 
-   Salve o script em um arquivo chamado `download_and_combine.py` e execute-o com:
+EN-US
 
-   ```bash
-   python download_and_combine.py
-   ```
+# Video and Audio Downloader with Graphical Interface
 
-3. **Verifique o Resultado**:
+This Python script provides a graphical user interface (GUI) for downloading videos, extracting audio, and merging them into a single MP4 file.
 
-   Após a execução, você encontrará o arquivo combinado `video_with_audio.mp4` no diretório especificado. O script também salva o vídeo e o áudio separadamente antes de combiná-los.
+## Features
+
+- **Download Videos:** Downloads videos from YouTube and other platforms supported by yt-dlp.
+- **Extract Audio:** Extracts the audio from the downloaded video.
+- **Merge Video and Audio:** Merges the extracted video and audio into a single MP4 file.
+- **User-Friendly GUI:** Allows users to easily enter the video URL, choose the output file name, and track the download and merging progress.
+- **Option to Remove Separate Files:** Enables the deletion of the individual audio and video files after merging, keeping only the final MP4 file.
+
+## Prerequisites
+
+- **Python 3:** Make sure you have Python 3 installed on your system.
+- **Libraries:** Install the necessary libraries:
+  ```bash
+  pip install yt-dlp tkinter ffmpeg-python
+  ```
+- **ffmpeg:** Download and install ffmpeg from [https://ffmpeg.org/](https://ffmpeg.org/) and ensure it is added to your system's PATH environment variable. This will allow the script to execute ffmpeg from the command line.
+
+## How to Use
+
+1. **Run the Script:** Execute the Python script. A graphical interface window will open.
+2. **Enter URL:** Paste the URL of the desired video into the "Video URL" field.
+3. **Output File Name (Optional):** Enter a name for the output file in the "Final File Name" field. If this field is left blank, the default name "video_with_audio.mp4" will be used.
+4. **Keep Separate Files (Optional):** Check the "Keep separate video and audio files" checkbox if you want to keep the downloaded video and audio files separately, in addition to the merged MP4 file.
+5. **Download and Merge:** Click the "Download and Merge" button.
+6. **Select Destination Folder:** A dialog window will open for you to choose the folder where you want to save the video and audio.
+7. **Wait for Download and Merge:** The download and merging progress will be displayed in the text area at the bottom of the window.
+8. **Done!** A message will be displayed when the process is complete, informing you of the location where the merged video was saved.
+
+## Notes
+
+- The script uses yt-dlp to download videos and ffmpeg to merge the video and audio.
+- Ensure that ffmpeg is installed correctly and added to your system's PATH environment variable.
+- Download and merge time may vary depending on the video size and your internet speed.
